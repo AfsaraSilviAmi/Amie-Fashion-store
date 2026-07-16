@@ -39,7 +39,7 @@ export default function NavBar() {
         <Link href="/">
           <Image
             src="/logo.png"
-            alt="Logo"
+            alt="logo"
             width={120}
             height={50}
             className="w-16 object-contain"
