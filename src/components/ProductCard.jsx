@@ -20,13 +20,13 @@ export default function ProductCard({ product }) {
           {product.category}
         </p>
 
-        <p className="mt-2 font-bold">
+        <p className="mt-2 font-bold text-[#8B9B7B]">
           ${product.price}
         </p>
 
         <Link
           href={`/product/${product.id}`}
-          className="mt-4 inline-block rounded-lg bg-black px-4 py-2 text-white"
+          className="mt-4 font-medium inline-block rounded-full bg-[#725F56] hover:bg-[#5A524A] px-4 py-2 text-white"
         >
           View Details
         </Link>
