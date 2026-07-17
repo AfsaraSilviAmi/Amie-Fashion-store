@@ -25,7 +25,7 @@ export default function ProductCard({ product }) {
         </p>
 
         <Link
-          href={`/product/${product.id}`}
+          href={`/products/${product.id}`}
           className="mt-4 font-medium inline-block rounded-full bg-[#725F56] hover:bg-[#5A524A] px-4 py-2 text-white"
         >
           View Details
