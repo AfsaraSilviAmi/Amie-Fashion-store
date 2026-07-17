@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { useCart } from "@/context/CartContext";
 
 const navLinks = [
   {
@@ -22,6 +23,7 @@ const navLinks = [
 ];
 
 export default function NavBar() {
+  const { totalItems } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const pathname = usePathname();
@@ -80,7 +82,7 @@ export default function NavBar() {
 
            
             <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#8B9B7B] text-xs text-white">
-              0
+              {totalItems}
             </span>
           </Link>
 

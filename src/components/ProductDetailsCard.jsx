@@ -1,19 +1,23 @@
 'use client'
+import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const ProductDetailsCard = ({product}) => {
      const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
      const [selectedColor, setSelectedColor] = useState(product.colors[0]);
        const [quantity, setQuantity] = useState(1);
+       const { addToCart } = useCart();
         const handleAddToCart = () => {
-    console.log({
-      ...product,
-      quantity,
-      selectedColor,
-      selectedSize,
-    });
+            toast.success("Item added to cart")
+    addToCart({
+    ...product,
+    quantity,
+    selectedColor,
+    selectedSize,
+  });
   };
     return (
         <div className="mx-auto max-w-7xl px-6 py-16">
